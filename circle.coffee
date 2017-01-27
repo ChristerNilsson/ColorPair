@@ -19,7 +19,7 @@ class Circle
 			noFill()
 			stroke 255,255,255,225
 			sw 0.05 * @radius
-			circle @x, @y, 1.025*@radius
+			circle @x, @y, 1.025 * @radius
 
 	within : (x,y) ->
-		dist(@x,@y, x,y) < @radius		
+		dist(@x,@y, x,y) < 1.05 * @radius		
