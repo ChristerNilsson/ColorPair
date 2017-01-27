@@ -16,7 +16,9 @@ class Game
 		@stopp = Date.now()
 			
 	select_colors : ->
-		if @level <= 26
+		if @level <= 7
+			n=2
+		else if @level <= 26
 			n=3
 		else
 			n=4
