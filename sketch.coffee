@@ -6,6 +6,7 @@ class Game
 		@init 0
 		@start = Date.now()
 		@stopp = Date.now()
+		@ring = true
 
 	init : (dlevel) ->
 		@level += dlevel
@@ -83,4 +84,8 @@ xdraw = ->
 
 mousePressed = ->
 	game.mousePressed()
+	xdraw()
+
+keyPressed = ->
+	game.ring = not game.ring	
 	xdraw()
