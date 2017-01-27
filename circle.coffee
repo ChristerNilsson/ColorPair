@@ -13,13 +13,13 @@ class Circle
 		fill @col
 		noStroke()
 		sw 0.05 * @radius
-		circle @x, @y, 0.975 * @radius
+		circle @x, @y, @radius
 
 		if game.ring
 			noFill()
 			stroke 255,255,255,225
 			sw 0.05 * @radius
-			circle @x, @y, 1.0*@radius
+			circle @x, @y, 1.025*@radius
 
 	within : (x,y) ->
 		dist(@x,@y, x,y) < @radius		
