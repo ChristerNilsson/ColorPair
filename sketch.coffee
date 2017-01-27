@@ -20,14 +20,14 @@ class Game
 			n=3
 		else
 			n=4
-		radius = width/(2+@level)
+		radius = width/(1.5+@level)
 		colors = []
 		for i in range n
 			for j in range n
 				for k in range n
-					r = int 255*(i+0.5)/n
-					g = int 255*(j+0.5)/n
-					b = int 255*(k+0.5)/n
+					r = int 255*i/(n-1)
+					g = int 255*j/(n-1)
+					b = int 255*k/(n-1)
 					colors.push color r,g,b,128
 		print colors
 		for i in range @level
