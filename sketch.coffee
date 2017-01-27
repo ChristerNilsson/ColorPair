@@ -4,9 +4,8 @@ class Game
 	constructor : (@width,@height) ->
 		@level = 1
 		@init 0
-		@start = Date.now()
-		@stopp = Date.now()
 		@ring = true
+		@stopp = Date.now()
 
 	init : (dlevel) ->
 		@level += dlevel
@@ -14,6 +13,7 @@ class Game
 		@circles = []
 		@marked = null # Marked Circle
 		@select_colors()
+		@start = @stopp
 		@stopp = Date.now()
 			
 	select_colors : ->
