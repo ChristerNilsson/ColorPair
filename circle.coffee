@@ -22,4 +22,7 @@ class Circle
 			circle @x, @y, 1.025 * @radius
 
 	within : (x,y) ->
-		dist(@x,@y, x,y) < 1.05 * @radius		
+		if game.ring
+			dist(@x,@y, x,y) < 1.05 * @radius		
+		else
+			dist(@x,@y, x,y) < 1.00* @radius		
