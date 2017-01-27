@@ -16,7 +16,7 @@ class Game
 		@stopp = Date.now()
 			
 	select_colors : ->
-		if @level <= 27
+		if @level <= 26
 			n=3
 		else
 			n=4
@@ -28,7 +28,8 @@ class Game
 					r = int 255*i/(n-1)
 					g = int 255*j/(n-1)
 					b = int 255*k/(n-1)
-					colors.push color r,g,b,128
+					if i+j+k>0
+						colors.push color r,g,b,128
 		print colors
 		for i in range @level
 			index = int random 0,colors.length-1
