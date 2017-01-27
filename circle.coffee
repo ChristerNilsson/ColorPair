@@ -12,13 +12,13 @@ class Circle
 	draw : () ->
 		fill @col
 		noStroke()
-		sw 0.05 * @radius
-		circle @x, @y, 0.975 * @radius
+		#sw 0.05 * @radius
+		circle @x, @y, 1.000 * @radius
 
-		noFill()
-		stroke 255,255,255,225
-		sw 0.05 * self.radius
-		circle @x, @y, 0.975*@radius
+		# noFill()
+		# stroke 255,255,255,225
+		# sw 0.05 * self.radius
+		# circle @x, @y, 0.975*@radius
 
 	within : (x,y) ->
 		dist(@x,@y, x,y) < @radius		
