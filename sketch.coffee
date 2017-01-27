@@ -23,7 +23,7 @@ class Game
 			n=3
 		else
 			n=4
-		radius = width/(1.5+@level)
+		radius = width/(0.7+@level) # 1.5
 		colors = []
 		for i in range n
 			for j in range n
