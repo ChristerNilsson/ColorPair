@@ -10,19 +10,29 @@ class Circle
 		@marked = false
 
 	draw : () ->
-		fill @col
-		noStroke()
-		sw 0.05 * @radius
-		circle @x, @y, @radius
-
 		if game.ring
+			fill @col
+			noStroke()
+			sw 0.05 * @radius
+			circle @x, @y, 0.975 * @radius
+
 			noFill()
 			stroke 255,255,255,225
 			sw 0.05 * @radius
+			circle @x, @y, 1.0 * @radius
+		else
+			fill @col
+			noStroke()
+			sw 0.05 * @radius
 			circle @x, @y, 1.025 * @radius
+
+			# noFill()
+			# stroke 255,255,255,225
+			# sw 0.05 * @radius
+			# circle @x, @y, 1.025 * @radius
 
 	within : (x,y) ->
 		if game.ring
-			dist(@x,@y, x,y) < 1.05 * @radius		
+			dist(@x,@y, x,y) < 1.025 * @radius		
 		else
-			dist(@x,@y, x,y) < 1.00* @radius		
+			dist(@x,@y, x,y) < 1.025 * @radius		
