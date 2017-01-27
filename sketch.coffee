@@ -17,7 +17,7 @@ class Game
 			
 	select_colors : ->
 		if @level <= 27
-			n=2
+			n=3
 		else
 			n=4
 		radius = width/(2+@level)
