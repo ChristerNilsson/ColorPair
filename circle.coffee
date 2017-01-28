@@ -1,3 +1,5 @@
+THICKNESS = 0.05 # %
+
 class Circle
 	constructor : (@col,@radius,circles) ->  
 		count = 1 
@@ -13,26 +15,17 @@ class Circle
 		if game.ring
 			fill @col
 			noStroke()
-			sw 0.05 * @radius
-			circle @x, @y, 0.975 * @radius
+			sw THICKNESS * @radius
+			circle @x, @y, (1-THICKNESS/2) * @radius
 
 			noFill()
 			stroke 255,255,255,225
-			sw 0.05 * @radius
-			circle @x, @y, 1.0 * @radius
+			sw THICKNESS * @radius
+			circle @x, @y, @radius
 		else
 			fill @col
 			noStroke()
-			sw 0.05 * @radius
-			circle @x, @y, 1.025 * @radius
+			sw THICKNESS * @radius
+			circle @x, @y, (1+THICKNESS/2) * @radius
 
-			# noFill()
-			# stroke 255,255,255,225
-			# sw 0.05 * @radius
-			# circle @x, @y, 1.025 * @radius
-
-	within : (x,y) ->
-		if game.ring
-			dist(@x,@y, x,y) < 1.025 * @radius		
-		else
-			dist(@x,@y, x,y) < 1.025 * @radius		
+	within : (x,y) -> dist(@x,@y, x,y) < (1+THICKNESS/2) * @radius		

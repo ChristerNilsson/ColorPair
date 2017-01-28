@@ -3,18 +3,18 @@ game = 0
 class Game
 	constructor : (@width,@height) ->
 		@level = 1
-		@init 0
 		@ring = true
 		@stopp = Date.now()
+		@init 0
 
 	init : (dlevel) ->
+		@start = @stopp
+		@stopp = Date.now()
 		@level += dlevel
 		@level = constrain @level,1,64
 		@circles = []
 		@marked = null # Marked Circle
 		@select_colors()
-		@start = @stopp
-		@stopp = Date.now()
 			
 	select_colors : ->
 		if @level <= 7
@@ -33,7 +33,6 @@ class Game
 					b = int 255*k/(n-1)
 					if i+j+k>0
 						colors.push color r,g,b,128
-		print colors
 		for i in range @level
 			index = int random 0,colors.length-1
 			col = colors[index]
