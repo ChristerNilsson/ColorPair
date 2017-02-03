@@ -28,7 +28,7 @@ class Game
 					r = int 255*i/(n-1)
 					g = int 255*j/(n-1)
 					b = int 255*k/(n-1)
-					if i+j+k>0 then colors.push color r,g,b,128
+					if i+j+k>0 then colors.push color r,g,b,127.5
 		for i in range @level
 			index = int random 0,colors.length-1
 			col = colors[index]

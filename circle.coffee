@@ -22,6 +22,8 @@ class Circle
 			stroke 255,255,255,225
 			sw THICKNESS * @radius
 			circle @x, @y, @radius
+			#sw 1
+			#text @col,@x,@y
 		else
 			fill @col
 			noStroke()
