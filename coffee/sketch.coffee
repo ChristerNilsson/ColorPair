@@ -62,8 +62,8 @@ class Game
 			@init -1 # Lose
 
 setup = ->
-	createCanvas windowWidth,windowHeight
-	game = new Game windowWidth,windowHeight 
+	createCanvas 0.99*windowWidth, 0.98*windowHeight
+	game = new Game width,height 
 	textSize 24
 	textAlign CENTER,CENTER
 	xdraw()
