@@ -11,7 +11,7 @@ class Circle
 				if dist(c.x,c.y,@x,@y) < @radius*0.4 then count += 1
 		@marked = false
 
-	draw : () ->
+	draw :  ->
 		if game.ring
 			fill @col
 			noStroke()
@@ -22,8 +22,6 @@ class Circle
 			stroke 255,255,255,225
 			sw THICKNESS * @radius
 			circle @x, @y, @radius
-			#sw 1
-			#text @col,@x,@y
 		else
 			fill @col
 			noStroke()
