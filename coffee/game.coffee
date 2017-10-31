@@ -2,6 +2,7 @@ class Game
 	constructor : (@width,@height) ->
 		@level = 1
 		@ring = true
+		@bg = 0
 		@stopp = Date.now()
 		@init 0
 

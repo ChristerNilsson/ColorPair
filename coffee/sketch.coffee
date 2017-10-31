@@ -8,10 +8,10 @@ setup = ->
 	xdraw()
 					
 xdraw = ->
-	background 0
+	background game.bg
 	for c in game.circles
 		c.draw()
-	fill 255,255,255,127
+	fill 255-game.bg,255-game.bg,255-game.bg,127
 	sc()
 	sw 1
 	text "Level #{game.level} in #{game.stopp-game.start} milliseconds", width/2, height-50
@@ -21,5 +21,8 @@ mousePressed = ->
 	xdraw()
 
 keyPressed = ->
-	game.ring = not game.ring	
+	if key == 'R' then game.ring = not game.ring	
+	if keyCode == 32
+		print 'space'
+		game.bg = 255 - game.bg
 	xdraw()
