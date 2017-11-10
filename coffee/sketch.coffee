@@ -5,8 +5,18 @@ setup = ->
 	client = info()
 	print client 
 	if client.cw == 1920
+		start.style.position = "absolute"
+		start.style.left = "500px"
+		start.style.top = "250px"
+		start.style.width = "1000px"
+		start.style.height = "500px"
 		createCanvas 1920, 1059
 	else
+		start.style.position = "absolute"
+		start.style.left = "160px"
+		start.style.top = "85px"
+		start.style.width = "320px"
+		start.style.height = "170px"
 		createCanvas 640, 338
 
 newGame = ->
