@@ -7,7 +7,7 @@ setup = ->
 	if client.cw == 1920
 		createCanvas 1920, 1059
 	else
-		createCanvas client.cw, client.ch - 200
+		createCanvas 640, 360
 
 newGame = ->
 	game = new Game width,height 
