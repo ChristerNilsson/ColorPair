@@ -2,8 +2,9 @@ game = 0
 client = null
 
 setup = ->
-	screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation
-	if screen.lockOrientationUniversal and screen.lockOrientationUniversal "landscape" then print 'landscape'
+	#screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation
+	#if screen.lockOrientationUniversal and screen.lockOrientationUniversal "landscape" then print 'landscape'
+	if screen and screen.orientation then screen.orientation.lock 'landscape' 
 
 	client = info()
 	print client 
