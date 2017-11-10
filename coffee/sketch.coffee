@@ -2,6 +2,9 @@ game = 0
 client = null
 
 setup = ->
+	screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation
+	if screen.lockOrientationUniversal and screen.lockOrientationUniversal "landscape" then print 'landscape'
+
 	client = info()
 	print client 
 	if client.cw == 1920
