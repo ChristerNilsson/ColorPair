@@ -22,11 +22,9 @@
 
         if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
 
-          //window.open("https://christernilsson.github.io/Lab","_self")
-          requestFullScreen.call(docEl);
-
-        }
-        else {
+        //window.open("https://christernilsson.github.io/Lab","_self")
+        requestFullScreen.call(docEl);
+        } else {
           cancelFullScreen.call(doc);
         }
         start.style.visibility = 'hidden'
@@ -34,10 +32,11 @@
       }
     </script>
 
-    <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
-    
+    <style> body {padding: 0; margin: 10;} canvas {vertical-align: top;} </style>
+
   </head>
   <body>
+    <div id=canvas></div>
     <button id='start'; onclick='toggleFullScreen()'>Start!</button>
   </body>
 </html>

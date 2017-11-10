@@ -10,14 +10,18 @@ setup = ->
 		start.style.top = "250px"
 		start.style.width = "1000px"
 		start.style.height = "500px"
-		createCanvas 1920, 1059
+		c = createCanvas 1900, 1059
+		#c.parent "canvas"		
+		#c.position 10,10 
 	else
 		start.style.position = "absolute"
 		start.style.left = "160px"
 		start.style.top = "85px"
 		start.style.width = "320px"
 		start.style.height = "170px"
-		createCanvas 640, 338
+		c = createCanvas 620, 338
+		#c.parent "canvas"		
+		#c.position 10,10 
 
 newGame = ->
 	game = new Game width,height 
@@ -33,7 +37,7 @@ xdraw = ->
 	fill 255-game.bg,255-game.bg,255-game.bg,127
 	sc()
 	sw 1
-	text "Level #{game.level} in #{game.stopp-game.start} milliseconds", width/2, height-50
+	text "Level #{game.level} in #{game.stopp-game.start} milliseconds", width/2, height-20
 
 mousePressed = ->
 	if not client.istouch_device and game
