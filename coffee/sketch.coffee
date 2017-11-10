@@ -1,13 +1,22 @@
 game = 0 
+client = null
 
 setup = ->
-	createCanvas 0.99*windowWidth, 0.98*windowHeight
+	client = info()
+	print client 
+	if client.cw == 1920
+		createCanvas 1920, 1059
+	else
+		createCanvas client.cw, client.ch - 200
+
+newGame = ->
 	game = new Game width,height 
 	textSize 24
 	textAlign CENTER,CENTER
 	xdraw()
 					
 xdraw = ->
+	if not game then return 
 	background game.bg
 	for c in game.circles
 		c.draw()
@@ -17,12 +26,32 @@ xdraw = ->
 	text "Level #{game.level} in #{game.stopp-game.start} milliseconds", width/2, height-50
 
 mousePressed = ->
-	game.mousePressed()
-	xdraw()
+	if not client.istouch_device and game
+		game.mousePressed()
+		xdraw()
+	false
+
+touchStarted = ->
+	if client.istouch_device and game 
+		game.mousePressed()
+		xdraw()
+	false	
 
 keyPressed = ->
-	if key == 'R' then game.ring = not game.ring	
-	if keyCode == 32
-		print 'space'
-		game.bg = 255 - game.bg
-	xdraw()
+	if game 
+		if key == 'R' then game.ring = not game.ring	
+		if keyCode == 32
+			print 'space'
+			game.bg = 255 - game.bg
+		xdraw()
+
+info = ->
+	ratio = window.devicePixelRatio || 1
+	ratio : ratio
+	is_touch_device : 'ontouchstart' in document.documentElement
+	sw : screen.width 
+	sh : screen.height
+	cw : document.documentElement.clientWidth
+	ch : document.documentElement.clientHeight
+	rw : screen.width * ratio
+	rh : screen.height * ratio
