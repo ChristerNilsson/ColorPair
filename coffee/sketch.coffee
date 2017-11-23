@@ -7,6 +7,7 @@ setup = ->
 	#if screen and screen.orientation then screen.orientation.lock 'landscape' 
 
 	createCanvas windowWidth,windowHeight
+	newGame()
 
 	#client = info()
 	#print client 
