@@ -34,17 +34,13 @@ Game = function () {
   }, {
     key: "select_colors",
     value: function select_colors() {
-      var b, col, colors, h, i, index, j, k, len, len1, n, radius, ref, ref1, results, s;
-      n = 4;
-      if (this.level < 3 * 3 * 3) {
-        n = 3;
-      }
-      if (this.level < 2 * 2 * 2) {
-        n = 2;
-      }
+      var b, col, colors, h, i, index, j, k, len, len1, radius, ref, ref1, results, s;
+      //n=4
+      //if @level < 3*3*3 then n=3
+      //if @level < 2*2*2 then n=2
       radius = width / (0.7 + this.level);
       colors = [];
-      ref = range(n * n * n);
+      ref = range(this.level);
       // for i in range n
       // 	for j in range n
       // 		for k in range n
@@ -54,7 +50,7 @@ Game = function () {
       // if i+j+k>0 then colors.push color r,g,b,127.5
       for (j = 0, len = ref.length; j < len; j++) {
         i = ref[j];
-        h = int(360 * i / (n * n * n));
+        h = int(360 * i / this.level);
         s = 100;
         b = 100;
         colors.push(color(h, s, b, 0.5));

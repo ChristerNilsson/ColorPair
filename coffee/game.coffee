@@ -16,9 +16,9 @@ class Game
 		@select_colors()
 			
 	select_colors : ->
-		n=4
-		if @level < 3*3*3 then n=3
-		if @level < 2*2*2 then n=2
+		#n=4
+		#if @level < 3*3*3 then n=3
+		#if @level < 2*2*2 then n=2
 		radius = width/(0.7+@level) 
 		colors = []
 		# for i in range n
@@ -28,8 +28,8 @@ class Game
 					# g = int 255*j/(n-1)
 					# b = int 255*k/(n-1)
 					# if i+j+k>0 then colors.push color r,g,b,127.5
-		for i in range n*n*n
-			h = int 360*i/(n*n*n)
+		for i in range @level
+			h = int 360*i/@level
 			s = 100
 			b = 100
 			colors.push color h,s,b,0.5
