@@ -21,13 +21,18 @@ class Game
 		if @level < 2*2*2 then n=2
 		radius = width/(0.7+@level) 
 		colors = []
-		for i in range n
-			for j in range n
-				for k in range n
-					r = int 255*i/(n-1)
-					g = int 255*j/(n-1)
-					b = int 255*k/(n-1)
-					if i+j+k>0 then colors.push color r,g,b,127.5
+		# for i in range n
+		# 	for j in range n
+		# 		for k in range n
+					# r = int 255*i/(n-1)
+					# g = int 255*j/(n-1)
+					# b = int 255*k/(n-1)
+					# if i+j+k>0 then colors.push color r,g,b,127.5
+		for i in range n*n*n
+			h = int 360*i/(n*n*n)
+			s = 100
+			b = 100
+			colors.push color h,s,b,0.5
 		for i in range @level
 			index = int random 0,colors.length-1
 			col = colors[index]

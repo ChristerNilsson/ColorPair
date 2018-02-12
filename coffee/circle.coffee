@@ -19,7 +19,8 @@ class Circle
 			circle @x, @y, (1-THICKNESS/2) * @radius
 
 			noFill()
-			stroke 255-game.bg,255-game.bg,255-game.bg,225
+			# stroke 255-game.bg,255-game.bg,255-game.bg,225
+			stroke 255-game.bg,0,255,225
 			sw THICKNESS * @radius
 			circle @x, @y, @radius
 		else

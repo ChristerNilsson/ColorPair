@@ -2,6 +2,7 @@ game = 0
 
 setup = ->
 	createCanvas windowWidth,windowHeight
+	colorMode HSB
 	newGame()
 
 newGame = ->

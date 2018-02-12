@@ -7,6 +7,7 @@ game = 0;
 
 setup = function setup() {
   createCanvas(windowWidth, windowHeight);
+  colorMode(HSB);
   return newGame();
 };
 

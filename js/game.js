@@ -34,7 +34,7 @@ Game = function () {
   }, {
     key: "select_colors",
     value: function select_colors() {
-      var b, col, colors, g, i, index, j, k, l, len, len1, len2, len3, m, n, o, p, r, radius, ref, ref1, ref2, ref3, results;
+      var b, col, colors, h, i, index, j, k, len, len1, n, radius, ref, ref1, results, s;
       n = 4;
       if (this.level < 3 * 3 * 3) {
         n = 3;
@@ -44,28 +44,25 @@ Game = function () {
       }
       radius = width / (0.7 + this.level);
       colors = [];
-      ref = range(n);
-      for (l = 0, len = ref.length; l < len; l++) {
-        i = ref[l];
-        ref1 = range(n);
-        for (m = 0, len1 = ref1.length; m < len1; m++) {
-          j = ref1[m];
-          ref2 = range(n);
-          for (o = 0, len2 = ref2.length; o < len2; o++) {
-            k = ref2[o];
-            r = int(255 * i / (n - 1));
-            g = int(255 * j / (n - 1));
-            b = int(255 * k / (n - 1));
-            if (i + j + k > 0) {
-              colors.push(color(r, g, b, 127.5));
-            }
-          }
-        }
+      ref = range(n * n * n);
+      // for i in range n
+      // 	for j in range n
+      // 		for k in range n
+      // r = int 255*i/(n-1)
+      // g = int 255*j/(n-1)
+      // b = int 255*k/(n-1)
+      // if i+j+k>0 then colors.push color r,g,b,127.5
+      for (j = 0, len = ref.length; j < len; j++) {
+        i = ref[j];
+        h = int(360 * i / (n * n * n));
+        s = 100;
+        b = 100;
+        colors.push(color(h, s, b, 0.5));
       }
-      ref3 = range(this.level);
+      ref1 = range(this.level);
       results = [];
-      for (p = 0, len3 = ref3.length; p < len3; p++) {
-        i = ref3[p];
+      for (k = 0, len1 = ref1.length; k < len1; k++) {
+        i = ref1[k];
         index = int(random(0, colors.length - 1));
         col = colors[index];
         colors.splice(index, 1);
@@ -77,13 +74,13 @@ Game = function () {
   }, {
     key: "mousePressed",
     value: function mousePressed() {
-      var c, cc, circle, count, i, index, l, len, n, ref;
+      var c, cc, circle, count, i, index, j, len, n, ref;
       // You must only mark one circle
       // The second circle must have the same color as the first one.
       n = this.circles.length;
       count = 0;
       ref = this.circles;
-      for (i = l = 0, len = ref.length; l < len; i = ++l) {
+      for (i = j = 0, len = ref.length; j < len; i = ++j) {
         c = ref[i];
         if (c.within(mouseX, mouseY)) {
           cc = c;
@@ -92,10 +89,10 @@ Game = function () {
         }
       }
       this.circles = function () {
-        var len1, m, ref1, results;
+        var k, len1, ref1, results;
         ref1 = this.circles;
         results = [];
-        for (i = m = 0, len1 = ref1.length; m < len1; i = ++m) {
+        for (i = k = 0, len1 = ref1.length; k < len1; i = ++k) {
           circle = ref1[i];
           if (i !== index) {
             results.push(circle);

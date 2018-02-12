@@ -40,7 +40,8 @@ Circle = function () {
         sw(THICKNESS * this.radius);
         circle(this.x, this.y, (1 - THICKNESS / 2) * this.radius);
         noFill();
-        stroke(255 - game.bg, 255 - game.bg, 255 - game.bg, 225);
+        // stroke 255-game.bg,255-game.bg,255-game.bg,225
+        stroke(255 - game.bg, 0, 255, 225);
         sw(THICKNESS * this.radius);
         return circle(this.x, this.y, this.radius);
       } else {
