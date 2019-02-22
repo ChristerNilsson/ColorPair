@@ -1,5 +1,7 @@
 # ColorPair
 
+[Try it!](https://github.com/ChristerNilsson/ColorPair#colorpair)
+
 En hybrid av Memory och Plockepinn.
 
 Para ihop cirklarna, men tryck bara på exakt en cirkel.
