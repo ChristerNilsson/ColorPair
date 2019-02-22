@@ -1,6 +1,6 @@
 # ColorPair
 
-[Try it!](https://github.com/ChristerNilsson/ColorPair#colorpair)
+[Try it!](https://github.com/ChristerNilsson/ColorPair/index.html)
 
 En hybrid av Memory och Plockepinn.
 
