@@ -2,18 +2,10 @@
 
 [Try it!](https://christernilsson.github.io/ColorPair/index.html)
 
-En hybrid av Memory och Plockepinn.
+Pair the circles
 
-Para ihop cirklarna, men tryck bara på exakt en cirkel.
+Only click on one circle at a time
 
-Maximera skärmen med F11 och rita om med F5.
+Hit R to toggle rings
 
-Tryck på R för att visa/dölja de vita omkretsarna.
-
-Tryck på mellanslag för att byta bakgrundsfärg.
-
-Plattformar:
-* Windows Ja
-* iOS Ja
-* Android Ja
-* OSX ?
+Hit Space to toggle background color
